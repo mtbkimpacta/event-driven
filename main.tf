@@ -1,11 +1,17 @@
 terraform {
   required_providers {
-	aws = {
-	  source  = "hashicorp/aws"
-	  version = "~> 4.22"
-	}
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.22"
+    }
   }
   required_version = ">= 0.14.9"
+  cloud {
+    organization = "LabsDevOpsCloud"
+    workspaces {
+      name = "event-driven"
+    }
+  }
 }
 
 provider "aws" {
